@@ -122,6 +122,44 @@
         default:
             echo "There is no answer";
     }
+
+    //---LOOPS--//
+
+     //Loop
+
+    //While loop
+    $x = 1;
+    //will happen as long as the statement is true
+    while ($x < 5) {
+        echo "<p>hi there</p><br>";
+        $x++;
+    }
+
+    //Do while loop
+  $x = 1;
+    //will always write it once first, then it will continue if the statement is true
+    do {
+        echo "<p>hi there</p><br>";
+        $x++;
+    }
+    while ($x <= 5)
+
+    //For loop
+    //first param = initializing counter
+    //second param - when to stop looping
+    //third param = how many times to increase before looping something out
+    for ($x = 0; $x < 10; $x++) {
+        echo "<p>Hi</p><br>";
+    };
+
+    //For each loop
+    $array = array("Ben", "Amanda", "Sam", "Brian", "Britta");
+
+    //refer to an array in the parantheses
+    //loops through every time we mention something in the array
+    foreach ($array as $loopdata) {
+        echo "<p>My name is " .$loopdata. "</p><br>";
+    }
 ?>
 
 </body>
