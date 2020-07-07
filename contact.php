@@ -7,12 +7,10 @@
     <li><a href="contact.php">CONTACT</a></li>
 </ul>
 
-
 <?php
 
-$_SESSION['username'] = "amanda92";
 echo $_SESSION['username']
+
 ?>
 </body>
 </html>
-

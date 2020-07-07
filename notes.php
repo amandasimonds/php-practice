@@ -128,38 +128,108 @@
      //Loop
 
     //While loop
-    $x = 1;
-    //will happen as long as the statement is true
-    while ($x < 5) {
-        echo "<p>hi there</p><br>";
-        $x++;
-    }
+        $x = 1;
+        //will happen as long as the statement is true
+        while ($x < 5) {
+            echo "<p>hi there</p><br>";
+            $x++;
+        }
 
     //Do while loop
-  $x = 1;
-    //will always write it once first, then it will continue if the statement is true
-    do {
-        echo "<p>hi there</p><br>";
-        $x++;
-    }
-    while ($x <= 5)
+        $x = 1;
+        //will always write it once first, then it will continue if the statement is true
+        do {
+            echo "<p>hi there</p><br>";
+            $x++;
+        }
+        while ($x <= 5)
 
     //For loop
-    //first param = initializing counter
-    //second param - when to stop looping
-    //third param = how many times to increase before looping something out
-    for ($x = 0; $x < 10; $x++) {
-        echo "<p>Hi</p><br>";
-    };
+        //first param = initializing counter
+        //second param - when to stop looping
+        //third param = how many times to increase before looping something out
+        for ($x = 0; $x < 10; $x++) {
+            echo "<p>Hi</p><br>";
+        };
 
     //For each loop
-    $array = array("Ben", "Amanda", "Sam", "Brian", "Britta");
+        $array = array("Ben", "Amanda", "Sam", "Brian", "Britta");
+        //refer to an array in the parantheses
+        //loops through every time we mention something in the array
+        foreach ($array as $loopdata) {
+            echo "<p>My name is " .$loopdata. "</p><br>";
+        }
 
-    //refer to an array in the parantheses
-    //loops through every time we mention something in the array
-    foreach ($array as $loopdata) {
-        echo "<p>My name is " .$loopdata. "</p><br>";
-    }
+    //Custom function
+        //it will go looking for the variable outside the function - it can be anywhere in the code, just has to be before the function is called
+        function newCalc($x) {
+            $newnr = $x * 0.75;
+            echo "<p>Here is 75% of your number: ".$newnr. "</p>";
+        }
+    
+        $x = 100;
+        newCalc($x);
+    
+        $a = 10;
+        newCalc($a);
+
+    //global and local scopes
+        //global scope
+        $x = 5;
+
+        function something(){
+            //local scope
+            $y = 10;
+        }
+
+    //Super Globals
+    //$_GLOBALS
+        //global scope
+        $x = 5;
+
+        function something(){
+            //local scope
+            $y = 10;
+            echo $GLOBALS['x']
+        }
+
+        //this will print 5
+        something();
+
+    //$_POST
+    //$_GET
+
+        //the method tells the submit button what to do with the information -->
+        //get will pass the info into url, and we can see it in url. post will pass into url, but we can not see it -->
+        <form method="GET">
+        <input type="hidden" name="name" value="AMANDA">
+        <button type="submit">CLICK ME!</button>
+        </form>
+        </body>
+
+        <?php
+        echo $_GET['name']
+        ?>
+
+    //$_COOKIE
+    //$_SESSION
+
+        //session makes the computer remember who is logged in
+        //session ends as soon as you close the browser.
+        //cookies have time limits (like 30 days or a month)
+        //hackers have an easier time accessing cookies
+        //cookies can be used for remembering what kind of clothing someone likes, but NOT LOG IN INFO
+
+        //make a cookie
+        //1st param - must have - name of cookie
+        //2nd param - value
+        //3rd param - expiration time. time() takes the current time (86400 is a day in milliseconds)
+        //to destroy a cookie, set the milliseconds to negative (-86400)
+        setcookie("name", "Amanda", time() + 86400)
+
+        //set the name equal to amanda
+        //because this is in session, hackers will NOT be able to see this
+        $_SESSION['name'] = "Amanda";
 ?>
 
 </body>
