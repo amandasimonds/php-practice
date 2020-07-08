@@ -9,8 +9,6 @@
 
 <?php
 
-echo $_SESSION['username']
-
 ?>
 </body>
 </html>

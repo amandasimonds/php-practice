@@ -1,8 +1,6 @@
 <?php
     //include_once is for loops, then it will stop including in a loop
     include 'functions/user-functions.php';
-    //this will save the variable inside the session
-    session_start();
 ?>
 
 <!DOCTYPE html>

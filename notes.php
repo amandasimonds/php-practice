@@ -230,6 +230,21 @@
         //set the name equal to amanda
         //because this is in session, hackers will NOT be able to see this
         $_SESSION['name'] = "Amanda";
+        $_SESSION['username'] = "amanda92";
+
+        //this prints the username, or whatever variable you had set to session
+        echo $_SESSION['username'];
+
+        //this will save the session variable inside the session for all pages
+        //you can put this in the header, so every page gets the variable
+        session_start();
+
+        // check if logged in
+        if (!isset($_SESSION['username'])) {
+            echo "You are not logged in";
+        } else {
+            echo "You are logged in!";
+        }
 ?>
 
 </body>
